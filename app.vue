@@ -1,3 +1,8 @@
 <template>
-  <h1 class="text-4xl m-2 font-semibold text-primary">Hello Nuxt!</h1>
+  <AppHeader />
+  <main
+    class="flex w-full min-h-screen h-full pt-20 justify-center items-center"
+  >
+    <NuxtPage />
+  </main>
 </template>
