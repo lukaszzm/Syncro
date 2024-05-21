@@ -2,4 +2,8 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["@nuxt/ui"],
+  routeRules: {
+    "/": { prerender: true },
+    "/dashboard/**": { ssr: false },
+  },
 });
