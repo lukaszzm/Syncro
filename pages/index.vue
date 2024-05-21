@@ -2,12 +2,14 @@
   <Head>
     <Title>Planner - your personal todo tracker</Title>
   </Head>
-  <section class="max-w-4xl p-6 text-center space-y-6">
+  <section
+    class="flex justify-center items-center gap-6 max-w-6xl p-6 text-center flex-col"
+  >
     <h1 class="text-5xl sm:text-6xl text-primary">
       Planner - Your Personal To-Do Tracker
     </h1>
     <h2 class="text-3xl">Stay Organized, Stay Productive</h2>
-    <p class="text-lg md:text-xl leading-relaxed">
+    <p class="text-lg md:text-xl leading-relaxed max-w-4xl">
       Elevate your productivity with
       <span
         class="underline decoration-primary p-1 rounded-md font-semibold underline-offset-2"
