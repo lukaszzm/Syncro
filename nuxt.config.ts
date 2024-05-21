@@ -2,6 +2,9 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["@nuxt/ui"],
+  typescript: {
+    typeCheck: true,
+  },
   routeRules: {
     "/": { prerender: true },
     "/dashboard/**": { ssr: false },
