@@ -8,6 +8,9 @@ export default defineNuxtConfig({
   ui: {
     icons: ["heroicons", "lucide"],
   },
+  colorMode: {
+    preference: "light",
+  },
   routeRules: {
     "/": { prerender: true },
     "/dashboard/**": { ssr: false },
