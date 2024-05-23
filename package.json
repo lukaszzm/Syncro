@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "syncro",
   "private": true,
   "type": "module",
   "scripts": {
@@ -10,7 +10,9 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@iconify-json/lucide": "^1.1.188",
     "@nuxt/ui": "^2.16.0",
+    "@nuxtjs/supabase": "^1.2.2",
     "nuxt": "^3.11.2",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0",

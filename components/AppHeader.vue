@@ -1,17 +1,17 @@
 <script setup lang="ts">
 const route = useRoute();
 
-const isDashboard = computed(() => route.path.includes("dashboard"));
+const isHome = computed(() => route.path === "/");
 </script>
 
 <template>
   <header class="w-full p-6 flex justify-between h-22 fixed">
     <div class="flex items-center gap-1">
-      <UIcon name="i-heroicons-queue-list" class="size-10 text-primary" />
-      <span class="font-semibold text-2xl">Planner</span>
+      <UIcon name="i-lucide-gantt-chart" class="size-10" />
+      <span class="font-semibold text-2xl">Syncro</span>
     </div>
 
-    <NewTask v-if="isDashboard" />
-    <UButton v-else size="lg" to="/dashboard">Dashboard</UButton>
+    <SignIn v-if="isHome" />
+    <NewProject v-else />
   </header>
 </template>
