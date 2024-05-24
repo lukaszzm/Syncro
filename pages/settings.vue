@@ -7,8 +7,8 @@ definePageMeta({
 
 <template>
   <Head>
-    <Title>Syncro - Dashboard</Title>
+    <Title>Syncro - Settings</Title>
   </Head>
 
-  <AuthSignOut />
+  <h1>Hello From Settings Page</h1>
 </template>

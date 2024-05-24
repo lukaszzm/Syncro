@@ -11,7 +11,7 @@ watch(
   () => {
     if (user.value) {
       useCookie(`${cookieName}-redirect-path`).value = null;
-      return navigateTo(redirectPath || RoutePaths.dashboard);
+      return navigateTo(redirectPath || RoutePaths.overview);
     }
   },
   { immediate: true }

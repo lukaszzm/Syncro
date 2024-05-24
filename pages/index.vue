@@ -4,7 +4,7 @@ import { RoutePaths } from "~/config/routes";
 const user = useSupabaseUser();
 
 if (user.value) {
-  navigateTo(RoutePaths.dashboard);
+  navigateTo(RoutePaths.overview);
 }
 </script>
 

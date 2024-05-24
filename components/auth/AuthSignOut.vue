@@ -15,5 +15,13 @@ async function signOut() {
 </script>
 
 <template>
-  <UButton size="lg" @click="signOut">Sign out</UButton>
+  <UButton
+    size="lg"
+    variant="soft"
+    @click="signOut"
+    trailing
+    class="rounded-xl"
+    icon="i-lucide-log-out"
+    >Sign out</UButton
+  >
 </template>

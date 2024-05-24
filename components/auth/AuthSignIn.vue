@@ -9,7 +9,7 @@ async function signInWithGoogle() {
   const { error } = await supabase.auth.signInWithOAuth({
     provider: "google",
     options: {
-      redirectTo: runtimeConfig.app.baseURL + RoutePaths.dashboard,
+      redirectTo: runtimeConfig.app.baseURL + RoutePaths.overview,
     },
   });
 

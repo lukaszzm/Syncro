@@ -13,7 +13,9 @@ export default defineNuxtConfig({
   },
   routeRules: {
     "/": { prerender: true },
-    "/dashboard/**": { ssr: false },
+    "/overview/**": { ssr: false },
+    "/projects/**": { ssr: false },
+    "/settings/**": { ssr: false },
   },
   supabase: {
     redirectOptions: {
