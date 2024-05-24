@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { RoutePaths } from "~/config/routes";
+
 const user = useSupabaseUser();
 
 const cookieName = useRuntimeConfig().public.supabase.cookieName;
@@ -9,12 +11,13 @@ watch(
   () => {
     if (user.value) {
       useCookie(`${cookieName}-redirect-path`).value = null;
-      return navigateTo(redirectPath || "/dashboard");
+      return navigateTo(redirectPath || RoutePaths.dashboard);
     }
   },
   { immediate: true }
 );
 </script>
+
 <template>
-  <div>Waiting for login...</div>
+  <div class="text-primary font-medium">Waiting for login...</div>
 </template>

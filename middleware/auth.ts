@@ -1,0 +1,9 @@
+import { RoutePaths } from "~/config/routes";
+
+export default defineNuxtRouteMiddleware((to, from) => {
+  const user = useSupabaseUser();
+
+  if (!user.value) {
+    return navigateTo(RoutePaths.home);
+  }
+});
