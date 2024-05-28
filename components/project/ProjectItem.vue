@@ -12,7 +12,7 @@ defineProps<Project>();
         id: id,
       })
     "
-    class="rounded-xl border border-border bg-gray-50 py-6 px-4 max-w-xs space-y-1 hover:border-primary flex flex-col"
+    class="rounded-xl border border-border bg-gray-50 py-6 px-4 max-w-xs w-full space-y-1 hover:border-primary flex flex-col"
   >
     <UBadge variant="subtle" class="text-xs self-start" size="xs">
       {{ status }}
