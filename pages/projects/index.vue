@@ -10,5 +10,6 @@ definePageMeta({
     <Title>Syncro - Projects</Title>
   </Head>
 
-  <h1>Hello From Projects Page</h1>
+  <h1 class="font-medium text-2xl mb-6">Your Projects:</h1>
+  <ProjectList />
 </template>

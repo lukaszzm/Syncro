@@ -3,10 +3,10 @@ import type { Status } from "~/config/status";
 
 export type Project = {
   id: string;
-  createdAt: string;
-  updatedAt: string;
+  created_at: string;
+  updated_at: string;
   name: string;
   description: string;
-  language: Language;
-  status: Status;
+  languages: string[];
+  status: string;
 };
