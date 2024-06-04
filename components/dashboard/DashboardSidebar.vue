@@ -27,7 +27,9 @@ const links = [
 </script>
 
 <template>
-  <sidebar
+  <div
+    role="navigation"
+    aria-label="Sidebar"
     class="p-3 space-y-5 bg-gray-100 border-r border-r-gray-200 shadow-inner"
   >
     <DashboardLogo />
@@ -37,5 +39,5 @@ const links = [
       >
       <DashboardLink v-for="link of links" :key="link.label" v-bind="link" />
     </nav>
-  </sidebar>
+  </div>
 </template>
