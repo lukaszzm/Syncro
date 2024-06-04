@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import type { Project } from "~/types/project";
+import type { Task } from "~/types/task";
 
-const props = defineProps<Project>();
+type Props = {
+  tasks: Task[];
+} & Project;
+
+const props = defineProps<Props>();
 
 const teamMembers = [
   {
@@ -15,29 +20,6 @@ const teamMembers = [
   {
     name: "Anna White",
     src: "https://i.pravatar.cc/150?img=5",
-  },
-];
-
-const tasks = [
-  {
-    name: "Add padding to button",
-    status: "open",
-  },
-  {
-    name: "Fix caching",
-    status: "in progress",
-  },
-  {
-    name: "Add fetching cart data",
-    status: "open",
-  },
-  {
-    name: "Change redirect URL",
-    status: "open",
-  },
-  {
-    name: "Fix translations in Order page",
-    status: "open",
   },
 ];
 </script>

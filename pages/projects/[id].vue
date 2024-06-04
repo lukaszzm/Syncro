@@ -15,12 +15,14 @@ const { data: project, pending, error } = await useProject(projectId);
 
 <template>
   <Head>
-    <Title>Syncro - {{ project ? project.name : "Not Found" }}</Title>
+    <Title>Syncro - {{ project?.name ? project.name : "Not Found" }}</Title>
   </Head>
 
   <div v-if="pending">Loading...</div>
+
   <div v-else-if="error || !project">
     Something went wrong, could not load the project
   </div>
+
   <ProjectInfo v-else v-bind="project" />
 </template>
