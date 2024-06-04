@@ -22,15 +22,5 @@ const { data: project, pending, error } = await useProject(projectId);
   <div v-else-if="error || !project">
     Something went wrong, could not load the project
   </div>
-  <div v-else>
-    <div class="flex justify-between mb-6">
-      <h1 class="font-medium text-2xl">New Project</h1>
-      <div class="space-x-4">
-        <UButton icon="i-lucide-bolt" size="lg" variant="ghost" color="gray">
-          Edit
-        </UButton>
-        <ProjectDeleteButton :id="projectId" />
-      </div>
-    </div>
-  </div>
+  <ProjectInfo v-else v-bind="project" />
 </template>
