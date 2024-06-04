@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import type { Task } from "~/types/task";
+
 type Props = {
-  tasks: { name: string; status: string }[];
+  tasks: Task[];
 };
 
 defineProps<Props>();
@@ -12,7 +14,7 @@ defineProps<Props>();
     <ul class="space-y-2">
       <li
         v-for="task in tasks"
-        v-key="task.name"
+        :key="task.id"
         class="bg-gray-50 max-w-xs rounded-lg p-2 flex justify-between"
       >
         {{ task.name }}

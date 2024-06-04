@@ -12,7 +12,7 @@ defineProps<Props>();
     <div class="flex">
       <UAvatar
         v-for="member in members"
-        v-key="member.name"
+        :key="member.name"
         :alt="member.name"
         :src="member.src"
       />
