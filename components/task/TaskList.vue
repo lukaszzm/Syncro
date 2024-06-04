@@ -11,7 +11,10 @@ defineProps<Props>();
 <template>
   <div class="space-y-2">
     <h2 class="text-lg font-medium text-gray-600">Tasks:</h2>
-    <ul class="space-y-2">
+    <p v-if="tasks.length === 0" class="p-4 text-gray-400 font-medium">
+      No tasks...
+    </p>
+    <ul v-else class="space-y-2">
       <li
         v-for="task in tasks"
         :key="task.id"
