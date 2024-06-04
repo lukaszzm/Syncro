@@ -26,7 +26,7 @@ defineProps<Project>();
     <div class="space-x-2">
       <UBadge
         v-for="language in languages"
-        v-key="language"
+        :key="language"
         :color="matchColorToLanguage(language)"
         variant="subtle"
       >

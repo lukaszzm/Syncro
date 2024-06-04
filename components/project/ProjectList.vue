@@ -9,7 +9,7 @@ const { data: projects, error, pending } = await useProjects();
   <div v-else class="flex gap-4 flex-wrap">
     <ProjectItem
       v-for="project in projects"
-      v-key="project.id"
+      :key="project.id"
       v-bind="project"
     />
   </div>
