@@ -9,6 +9,39 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      members: {
+        Row: {
+          id: string;
+          project_id: string;
+          user_id: string;
+        };
+        Insert: {
+          id?: string;
+          project_id: string;
+          user_id: string;
+        };
+        Update: {
+          id?: string;
+          project_id?: string;
+          user_id?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "members_project_id_fkey";
+            columns: ["project_id"];
+            isOneToOne: false;
+            referencedRelation: "projects";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "members_user_id_fkey";
+            columns: ["user_id"];
+            isOneToOne: false;
+            referencedRelation: "users";
+            referencedColumns: ["id"];
+          }
+        ];
+      };
       projects: {
         Row: {
           created_at: string;
@@ -103,36 +136,6 @@ export type Database = {
           updatedAt?: string;
         };
         Relationships: [];
-      };
-      usersToProjects: {
-        Row: {
-          projectId: string;
-          userId: string;
-        };
-        Insert: {
-          projectId: string;
-          userId: string;
-        };
-        Update: {
-          projectId?: string;
-          userId?: string;
-        };
-        Relationships: [
-          {
-            foreignKeyName: "usersToProjects_projectId_fkey";
-            columns: ["projectId"];
-            isOneToOne: false;
-            referencedRelation: "projects";
-            referencedColumns: ["id"];
-          },
-          {
-            foreignKeyName: "usersToProjects_userId_fkey";
-            columns: ["userId"];
-            isOneToOne: false;
-            referencedRelation: "users";
-            referencedColumns: ["id"];
-          }
-        ];
       };
     };
     Views: {

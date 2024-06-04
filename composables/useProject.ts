@@ -6,7 +6,7 @@ export async function useProject(id: string) {
   return await useAsyncData(`project-${id}`, async () => {
     const { data } = await client
       .from("projects")
-      .select(`*, tasks (*)`)
+      .select(`*, tasks (*), users (*)`)
       .eq("id", id)
       .limit(1)
       .single();

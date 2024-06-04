@@ -1,6 +1,3 @@
-import type { Language } from "~/config/language";
-import type { Status } from "~/config/status";
-
 export type Project = {
   id: string;
   created_at: string;

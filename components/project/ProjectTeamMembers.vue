@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import type { User } from "~/types/user";
+
 type Props = {
-  members: { name: string; src: string }[];
+  members: User[];
 };
 
 defineProps<Props>();
@@ -12,9 +14,9 @@ defineProps<Props>();
     <div class="flex">
       <UAvatar
         v-for="member in members"
-        :key="member.name"
-        :alt="member.name"
-        :src="member.src"
+        :key="member.id"
+        :alt="member.firstName"
+        :src="member.imageSrc"
       />
     </div>
   </div>
