@@ -23,6 +23,6 @@ const props = defineProps<Props>();
       :closed="tasks.filter((el) => el.status === 'closed').length"
     />
 
-    <TaskList :tasks="tasks" />
+    <TaskList :tasks="tasks" :project-id="id" />
   </div>
 </template>

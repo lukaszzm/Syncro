@@ -3,6 +3,7 @@ import type { Task } from "~/types/task";
 
 type Props = {
   tasks: Task[];
+  projectId: string;
 };
 
 defineProps<Props>();
@@ -10,7 +11,10 @@ defineProps<Props>();
 
 <template>
   <div class="space-y-2">
-    <h2 class="text-lg font-medium text-gray-600">Tasks:</h2>
+    <div class="flex w-full justify-between items-center max-w-5xl">
+      <h2 class="text-lg font-medium text-gray-600">Tasks:</h2>
+      <TaskNew :project-id="projectId" />
+    </div>
     <p v-if="tasks.length === 0" class="p-4 text-gray-400 font-medium">
       No tasks...
     </p>

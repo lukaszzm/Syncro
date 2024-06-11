@@ -9,7 +9,7 @@ defineProps<Props>();
 </script>
 
 <template>
-  <div class="flex gap-4">
+  <div class="flex gap-4 w-full max-w-5xl justify-between">
     <TaskCard label="Open tasks" icon="i-lucide-align-justify" :value="open" />
     <TaskCard
       label="In progress tasks"
