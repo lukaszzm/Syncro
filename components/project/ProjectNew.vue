@@ -2,7 +2,7 @@
 import { z } from "zod";
 import type { FormSubmitEvent } from "#ui/types";
 import { Language } from "~/config/language";
-import { Status } from "~/config/status";
+import { ProjectStatus } from "~/config/status";
 import type { Database } from "~/types/supabase";
 import { RoutePaths } from "~/config/routes";
 
@@ -14,7 +14,7 @@ const schema = z.object({
   languages: z
     .array(z.string())
     .min(1, "Must be selected at least one programming language"),
-  status: z.string().min(1),
+  status: z.nativeEnum(ProjectStatus),
 });
 
 type Schema = z.output<typeof schema>;
@@ -77,7 +77,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
     </UFormGroup>
 
     <UFormGroup label="Status" name="status">
-      <USelect v-model="state.status" :options="Object.values(Status)" />
+      <USelect v-model="state.status" :options="Object.values(ProjectStatus)" />
     </UFormGroup>
 
     <UAlert

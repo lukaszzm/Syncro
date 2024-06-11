@@ -1,3 +1,5 @@
+import type { ProjectStatus } from "~/config/status";
+
 export type Project = {
   id: string;
   created_at: string;
@@ -5,5 +7,5 @@ export type Project = {
   name: string;
   description: string;
   languages: string[];
-  status: string;
+  status: ProjectStatus;
 };

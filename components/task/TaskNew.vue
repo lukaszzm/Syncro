@@ -2,7 +2,7 @@
 import { z } from "zod";
 import type { FormSubmitEvent } from "#ui/types";
 import type { Database } from "~/types/supabase";
-import { Status } from "~/config/status";
+import { TaskStatus } from "~/config/status";
 
 type Props = {
   projectId: string;
@@ -15,8 +15,8 @@ const client = useSupabaseClient<Database>();
 
 const schema = z.object({
   name: z.string().min(1),
-  description: z.string().min(1),
-  status: z.string(),
+  description: z.string().optional(),
+  status: z.nativeEnum(TaskStatus),
   projectId: z.string(),
 });
 
@@ -26,7 +26,7 @@ const state = reactive({
   name: undefined,
   description: undefined,
   projectId: props.projectId,
-  status: "Idle",
+  status: TaskStatus.Open,
 });
 
 const pending = ref(false);
@@ -80,12 +80,15 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
           <UInput v-model="state.name" />
         </UFormGroup>
 
-        <UFormGroup label="Description" name="description">
+        <UFormGroup label="Description (optional)" name="description">
           <UTextarea v-model="state.description" />
         </UFormGroup>
 
         <UFormGroup label="Status" name="status">
-          <USelect v-model="state.status" :options="Object.values(Status)" />
+          <USelect
+            v-model="state.status"
+            :options="Object.values(TaskStatus)"
+          />
         </UFormGroup>
       </UForm>
 

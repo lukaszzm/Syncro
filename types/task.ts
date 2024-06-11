@@ -1,9 +1,11 @@
+import type { TaskStatus } from "~/config/status";
+
 export type Task = {
   createdAt: string;
-  description: string | null;
+  updatedAt: string;
   id: string;
   name: string;
+  description: string | null;
   projectId: string;
-  status: string;
-  updatedAt: string;
+  status: TaskStatus;
 };

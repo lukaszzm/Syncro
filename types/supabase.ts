@@ -49,7 +49,7 @@ export type Database = {
           id: string;
           languages: string[];
           name: string;
-          status: string;
+          status: Database["public"]["Enums"]["ProjectStatus"];
           updated_at: string;
         };
         Insert: {
@@ -58,7 +58,7 @@ export type Database = {
           id?: string;
           languages: string[];
           name: string;
-          status: string;
+          status?: Database["public"]["Enums"]["ProjectStatus"];
           updated_at?: string;
         };
         Update: {
@@ -67,7 +67,7 @@ export type Database = {
           id?: string;
           languages?: string[];
           name?: string;
-          status?: string;
+          status?: Database["public"]["Enums"]["ProjectStatus"];
           updated_at?: string;
         };
         Relationships: [];
@@ -79,7 +79,7 @@ export type Database = {
           id: string;
           name: string;
           projectId: string;
-          status: string;
+          status: Database["public"]["Enums"]["TaskStatus"];
           updatedAt: string;
         };
         Insert: {
@@ -88,7 +88,7 @@ export type Database = {
           id?: string;
           name: string;
           projectId: string;
-          status?: string;
+          status?: Database["public"]["Enums"]["TaskStatus"];
           updatedAt?: string;
         };
         Update: {
@@ -97,7 +97,7 @@ export type Database = {
           id?: string;
           name?: string;
           projectId?: string;
-          status?: string;
+          status?: Database["public"]["Enums"]["TaskStatus"];
           updatedAt?: string;
         };
         Relationships: [
@@ -145,7 +145,8 @@ export type Database = {
       [_ in never]: never;
     };
     Enums: {
-      [_ in never]: never;
+      ProjectStatus: "In progress" | "Closed" | "Idle";
+      TaskStatus: "In progress" | "Closed" | "Open";
     };
     CompositeTypes: {
       [_ in never]: never;

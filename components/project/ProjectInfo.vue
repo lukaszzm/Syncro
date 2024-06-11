@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { TaskStatus } from "~/config/status";
 import type { Project } from "~/types/project";
 import type { Task } from "~/types/task";
 import type { User } from "~/types/user";
@@ -18,9 +19,11 @@ const props = defineProps<Props>();
     <ProjectTeamMembers :members="users" />
 
     <TaskOverview
-      :open="tasks.filter((el) => el.status === 'open').length"
-      :inProgress="tasks.filter((el) => el.status === 'in progress').length"
-      :closed="tasks.filter((el) => el.status === 'closed').length"
+      :open="tasks.filter((el) => el.status === TaskStatus.Open).length"
+      :inProgress="
+        tasks.filter((el) => el.status === TaskStatus.InProgress).length
+      "
+      :closed="tasks.filter((el) => el.status === TaskStatus.Closed).length"
     />
 
     <TaskList :tasks="tasks" :project-id="id" />
